@@ -117,6 +117,8 @@
   "settings.enableTrafficLogger": "Записывать данные трафика",
   "settings.showDockIcon": "Показывать значок в доке",
   "settings.useWindowFrame": "Использовать системную рамку окна",
+  "settings.windowFrame.confirm.title": "Подтверждение перезапуска приложения",
+  "settings.windowFrame.confirm.content": "Изменение настроек системной рамки окна требует перезапуска приложения. Перезапустить сейчас?",
   "settings.rememberSelectedSiderCard": "Запомнить выбранную вкладку",
   "settings.lockSiderCards": "Зафиксировать положение карточек",
   "settings.disableHardwareAcceleration": "Отключить аппаратное ускорение",

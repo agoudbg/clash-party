@@ -121,6 +121,8 @@
   "settings.hideConnectionCardWave": "Connection Card Pure Number Display",
   "settings.showDockIcon": "Show Dock Icon",
   "settings.useWindowFrame": "Use System Title Bar",
+  "settings.windowFrame.confirm.title": "Confirm App Restart",
+  "settings.windowFrame.confirm.content": "Changing the system title bar setting requires an app restart to take effect. Restart now?",
   "settings.rememberSelectedSiderCard": "Remember Selected Sidebar Card",
   "settings.lockSiderCards": "Lock Sidebar Card Positions",
   "settings.triggerMainWindowBehavior": "Tray Window Trigger Behavior",

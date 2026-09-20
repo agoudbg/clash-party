@@ -115,6 +115,8 @@
   "settings.enableTrafficLogger": "ثبت داده‌های مصرف ترافیک",
   "settings.showDockIcon": "نمایش آیکون Dock",
   "settings.useWindowFrame": "استفاده از نوار عنوان سیستم",
+  "settings.windowFrame.confirm.title": "تایید راه‌اندازی مجدد برنامه",
+  "settings.windowFrame.confirm.content": "تغییر تنظیمات نوار عنوان سیستم نیاز به راه‌اندازی مجدد برنامه دارد. اکنون راه‌اندازی مجدد شود؟",
   "settings.rememberSelectedSiderCard": "به خاطر سپردن کارت انتخاب شده",
   "settings.lockSiderCards": "قفل کردن موقعیت کارت‌های نوار کناری",
   "settings.disableHardwareAcceleration": "غیرفعال کردن شتاب سخت‌افزاری",

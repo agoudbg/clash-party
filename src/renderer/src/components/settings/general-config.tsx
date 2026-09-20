@@ -69,6 +69,8 @@ const GeneralConfig: React.FC = () => {
   const [trayIconCropDataURL, setTrayIconCropDataURL] = useState('')
   const [trayIconCropTarget, setTrayIconCropTarget] = useState<TrayIconCropTarget>('custom')
   const [trayIconDrawerOpen, setTrayIconDrawerOpen] = useState(false)
+  const [showWindowFrameConfirm, setShowWindowFrameConfirm] = useState(false)
+  const [pendingWindowFrameValue, setPendingWindowFrameValue] = useState(false)
   const [showHardwareAccelConfirm, setShowHardwareAccelConfirm] = useState(false)
   const [pendingHardwareAccelValue, setPendingHardwareAccelValue] = useState(false)
   const { setTheme } = useTheme()
@@ -228,6 +230,28 @@ const GeneralConfig: React.FC = () => {
             setIsRelaunching(true)
             try {
               await patchAppConfig({ disableHardwareAcceleration: pendingHardwareAccelValue })
+              await relaunchApp()
+            } catch (e) {
+              toast.error(String(e))
+              setIsRelaunching(false)
+            }
+          }}
+        />
+      )}
+      {showWindowFrameConfirm && (
+        <BaseConfirmModal
+          isOpen={showWindowFrameConfirm}
+          title={t('settings.windowFrame.confirm.title')}
+          content={t('settings.windowFrame.confirm.content')}
+          onCancel={() => {
+            setShowWindowFrameConfirm(false)
+            setPendingWindowFrameValue(false)
+          }}
+          onConfirm={async () => {
+            setShowWindowFrameConfirm(false)
+            setIsRelaunching(true)
+            try {
+              await patchAppConfig({ useWindowFrame: pendingWindowFrameValue })
               await relaunchApp()
             } catch (e) {
               toast.error(String(e))
@@ -714,17 +738,11 @@ const GeneralConfig: React.FC = () => {
             size="sm"
             isSelected={useWindowFrame}
             isDisabled={isRelaunching}
-            onValueChange={debounce(async (v) => {
+            onValueChange={(v) => {
               if (isRelaunching) return
-              setIsRelaunching(true)
-              try {
-                await patchAppConfig({ useWindowFrame: v })
-                await relaunchApp()
-              } catch (e) {
-                toast.error(String(e))
-                setIsRelaunching(false)
-              }
-            }, 1000)}
+              setPendingWindowFrameValue(v)
+              setShowWindowFrameConfirm(true)
+            }}
           />
         </SettingItem>
         <SettingItem title={t('settings.rememberSelectedSiderCard')} divider>

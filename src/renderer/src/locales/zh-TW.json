@@ -121,6 +121,8 @@
   "settings.hideConnectionCardWave": "連接卡片純數字顯示",
   "settings.showDockIcon": "顯示 Dock 圖標",
   "settings.useWindowFrame": "使用系統標題欄",
+  "settings.windowFrame.confirm.title": "確認重啟應用程式",
+  "settings.windowFrame.confirm.content": "修改系統標題欄設定需要重啟應用程式才能生效。是否立即重啟？",
   "settings.rememberSelectedSiderCard": "記住已選側邊卡片",
   "settings.lockSiderCards": "鎖定側邊卡片位置",
   "settings.triggerMainWindowBehavior": "托盤窗口觸發行為",
